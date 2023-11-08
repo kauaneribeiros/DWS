@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 2 - JavaScript - Mini Calculadora</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body style="max-width: 400px; margin: 50px auto; font-family: 'Courier New', Courier, monospace;">
+    <h1>Praticando 2 - JavaScript - Mini Calculadora</h1>
+    <div class="form-group">
+        <input type="number" class="form-control" id="num1" placeholder="Número 1">
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control" id="num2" placeholder="Número 2">
+    </div>
+    <div>
+        <button class="btn btn-primary" style="background-color: #FF1493; border-color: #FF1493; width: 48%;"
+            onclick="calcular('soma')">Soma</button>
+        <button class="btn btn-primary" style="background-color: #FF1493; border-color: #FF1493; width: 48%;"
+            onclick="calcular('subtracao')">Subtração</button>
+    </div>
+    <br>
+    <div>
+        <button class="btn btn-primary" style="background-color: #FF1493; border-color: #FF1493; width: 48%;"
+            onclick="calcular('multiplicacao')">Multiplicação</button>
+        <button class="btn btn-primary" style="background-color: #FF1493; border-color: #FF1493; width: 48%;"
+            onclick="calcular('divisao')">Divisão</button>
+    </div>
+    <br>
+    <input type="text" class="form-control" id="resultado" placeholder="Resultado" readonly>
+
+    <script>
+        function calcular(operacao) {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var resultado = 0;
+            switch (operacao) {
+                case 'soma':
+                    resultado = num1 + num2;
+                    break;
+                case 'subtracao':
+                    resultado = num1 - num2;
+                    break;
+                case 'multiplicacao':
+                    resultado = num1 * num2;
+                    break;
+                case 'divisao':
+                    resultado = num1 / num2;
+                    break;
+            }
+            document.getElementById('resultado').value = resultado;
+        }
+    </script>
+</body>
+</html>

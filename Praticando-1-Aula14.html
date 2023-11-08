@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 1 - JavaScript</title>
+</head>
+
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Praticando 1 - JavaScript</h1>
+    <h2 id="nome"></h2>
+    <button onclick="document.getElementById('container-texto').innerHTML += '<p>Lorem ipsum</p>';">Adicionar Texto</button>
+    <button onclick="document.getElementById('container-texto').innerHTML = '';">Remover Texto</button>
+    <div id="container-texto"></div>
+    <script>
+        var pessoa = prompt("Por favor, digite o seu nome:", "Seu nome aqui");
+        if (pessoa != null) {
+            document.getElementById("nome").innerHTML = "Seja bem-vindo(a) " + pessoa;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 3 - JavaScript - Cores (click e mouse)</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .retangulo {
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            transition: background-color 0.5s;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+
+        .preview {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-family: 'Courier New', Courier, monospace;">Praticando 3 - JavaScript - Cores (click e mouse)</h1>
+    <div class="container">
+        <div class="retangulo" style="background-color: rgb(255, 0, 85);" onmouseover="mudarCor('rgb(255, 0, 85)')" onmouseout="resetarCor()"></div>
+        <div class="retangulo" style="background-color: rgb(0, 217, 255);" onmouseover="mudarCor('rgb(0, 217, 255)')" onmouseout="resetarCor()"></div>
+        <div class="retangulo" style="background-color: rgb(128, 0, 0);" onmouseover="mudarCor('rgb(128, 0, 0)')" onmouseout="resetarCor()"></div>
+        <div class="retangulo" style="background-color: yellow;" onmouseover="mudarCor('yellow')" onmouseout="resetarCor()"></div>
+        <div class="retangulo" style="background-color: pink;" onmouseover="mudarCor('pink')" onmouseout="resetarCor()"></div>
+    </div>
+
+    <div class="preview" id="preview" style="display: none;">Pré-visualização</div>
+
+    <button onclick="resetarCor()" style="margin-top: 20px;">Resetar</button>
+
+    <script>
+        function mudarCor(cor) {
+            document.body.style.backgroundColor = cor;
+            document.getElementById('preview').style.display = 'block';
+            document.getElementById('preview').innerText = 'Pré-visualização';
+        }
+
+        function resetarCor() {
+            document.body.style.backgroundColor = '#f2f2f2'; // cor de fundo original, pode ser alterada conforme necessário
+            document.getElementById('preview').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
+
